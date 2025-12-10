@@ -52,7 +52,7 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
                 <div className="project_box" style={{padding: "5px"}}>
                   {project.project_main_image && (
                     <motion.img
-                      src={`${import.meta.env.VITE_IMAGE_URL}/project-thumbnails/${project.project_thumbnail}`}
+                      src={`${import.meta.env.VITE_IMAGE_URL}/frontend/project-thumbnails/${project.project_thumbnail}`}
                       alt={project.project_name}
                       className="img-fluid rounded mb-2"
                       style={{ cursor: "zoom-in" }}
@@ -142,7 +142,7 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
               <motion.div className="item" style={{ width: "25%", cursor: "zoom-in", padding: "5px" }}>
                 <div style={{ width: "100%", overflow: "hidden", borderRadius: "8px" }}>
                   <motion.img
-                    src={`${import.meta.env.VITE_IMAGE_URL}/project-images/${project.project_main_image}`}
+                    src={`${import.meta.env.VITE_IMAGE_URL}/frontend/project-images/${project.project_main_image}`}
                     alt={`media-project_main_image`}
                     style={{ width: "100%", height: "300px", objectFit: "cover" }}
                     whileHover={{ scale: 1.1 }}
@@ -166,7 +166,7 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
                     background: "#f0f0f0",                    
                   }}>
                     <motion.img
-                      src={`${import.meta.env.VITE_IMAGE_URL}/${item?.image}`}
+                      src={`${import.meta.env.VITE_IMAGE_URL}/frontend/${item?.image}`}
                       alt={`media-${index}`}
                       style={{ width: "100%", height: "300px", objectFit: "cover" }}
                       whileHover={{ scale: 1.05 }}

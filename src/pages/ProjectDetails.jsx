@@ -8,10 +8,6 @@ const ProjectDetails = () => {
 
     return(
         <>
-        {/* <Header 
-			selectedCategory={selectedCategory} 
-			setSelectedCategory={setSelectedCategory} 
-		/> */}
         <Projects 
 			selectedCategory={selectedCategory} 
 		/>

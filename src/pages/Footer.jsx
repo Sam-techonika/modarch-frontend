@@ -8,10 +8,10 @@ const Footer = () => {
                     <div className="col-md-12">
                         <div className="footer-menu">
                             <ul>
-                                <li><Link to="/modarch_new_a">Home</Link></li>
-                                <li><Link to="/modarch_new_a/about">About Us</Link></li>
-                                <li><Link to="/modarch_new_a/careers">Careers</Link></li>
-                                <li><Link to="/modarch_new_a/contact">Contact</Link></li>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="about">About Us</Link></li>
+                                <li><Link to="careers">Careers</Link></li>
+                                <li><Link to="contact">Contact</Link></li>
                             </ul>
                         </div>
                     </div>

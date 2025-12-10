@@ -40,7 +40,7 @@ const Preloader = () => {
             >
               <span className="letter">
                 <img
-                  src="https://www.modarchindia.com/assets/frontend/images/modarchindia/logo-green.png"
+                  src={`${import.meta.env.VITE_IMAGE_URL}frontend/images/modarchindia/logo-green.png`}
                   alt="logo"
                 />
               </span>

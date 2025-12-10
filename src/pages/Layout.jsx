@@ -9,7 +9,7 @@ const Layout = () => {
 
     const handleCategoryChange = (categoryId) => {
         setSelectedCategory(categoryId);
-        navigate('/modarch_new_a'); // Reset URL when category changes
+        navigate('/'); // Reset URL when category changes
     };
     console.log('tst', selectedCategory);
     return (

@@ -31,23 +31,23 @@ const Header = ({ selectedCategory, setSelectedCategory }) => {
           {/* Logo */}
           <button className=" navbar-toggler men border-0 navbar-brand d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img
-              src="https://www.modarchindia.com/assets/frontend/images/modarchindia/logo-green.png"
+              src={`${import.meta.env.VITE_IMAGE_URL}frontend/images/modarchindia/logo-green.png`}
               alt="Modarch Logo"
               className="mlogo"
               style={{ height: "45px", objectFit: "contain" }}
             />
             <img
-              src="https://growthvault.in/modarch_admin/public/assets/uploads/ham.svg"
+              src={`${import.meta.env.VITE_IMAGE_URL}uploads/ham.svg`}
               alt="Modarch Logo"
               className="ham"
               style={{ height: "45px", objectFit: "contain" }}
             />
           </button>
           <ul class="dropdown-menu">
-            <li><Link to="/modarch_new_a" class="dropdown-item" href="#">Home</Link></li>
-            <li><Link to="/modarch_new_a/about" class="dropdown-item" href="#">About Us</Link></li>
-            <li><Link to="/modarch_new_a/careers" class="dropdown-item" href="#">Careers</Link></li>
-            <li><Link to="/modarch_new_a/contact" class="dropdown-item" href="#">Contact Us</Link></li>
+            <li><Link to="/" class="dropdown-item" href="#">Home</Link></li>
+            <li><Link to="/about" class="dropdown-item" href="#">About Us</Link></li>
+            <li><Link to="/careers" class="dropdown-item" href="#">Careers</Link></li>
+            <li><Link to="/contact" class="dropdown-item" href="#">Contact Us</Link></li>
           </ul>
 
           {/* Mobile Toggle */}

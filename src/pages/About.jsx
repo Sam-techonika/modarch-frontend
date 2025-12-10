@@ -41,7 +41,7 @@ const About = () => {
                 <h1 className="text-black">Leadership</h1>
                 <div className="row">
                     <div className="col-md-3" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://growthvault.in/modarch_admin/public/assets/frontend/images/modarchindia/leaders/CEO.png" />
+                        <img src={`${import.meta.env.VITE_IMAGE_URL}frontend/images/modarchindia/leaders/CEO.png`} />
                     </div>
                     <div className="col-md-8" data-aos="fade-up" data-aos-delay="200">
                         <h2 className="text-black">Amit Gangal</h2>
@@ -62,17 +62,17 @@ const About = () => {
             <section className="teamSection">
                 <div className="row">
                     <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://growthvault.in/modarch_admin/public/assets/frontend/images/modarchindia/leaders/partner1.png" />
+                        <img src={`${import.meta.env.VITE_IMAGE_URL}frontend/images/modarchindia/leaders/partner1.png`} />
                         <h2 className="text-black">Hitesh Gupta</h2>
                         <h5 className="text-black">TEAM DESIGN & EXECUTION FOR COMMERCIAL AND HOTELS</h5>
                     </div>
                     <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://growthvault.in/modarch_admin/public/assets/frontend/images/modarchindia/leaders/partner2.png" />
+                        <img src={`${import.meta.env.VITE_IMAGE_URL}frontend/images/modarchindia/leaders/partner2.png`} />
                         <h2 className="text-black">Anitesh Agarwal</h2>
                         <h5 className="text-black">TEAM DESIGN & EXECUTION FOR GROUP HOUSINGS AND TOWNSHIPS</h5>
                     </div>
                     <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://growthvault.in/modarch_admin/public/assets/frontend/images/modarchindia/leaders/krishna.jpg" />
+                        <img src={`${import.meta.env.VITE_IMAGE_URL}frontend/images/modarchindia/leaders/partner3.png`} />
                         <h2 className="text-black">Krishna Agnihotri</h2>
                         <h5 className="text-black">TEAM DESIGN & EXECUTION FOR MIX LAND USE</h5>
                     </div>

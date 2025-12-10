@@ -75,7 +75,7 @@ const Projects = () => {
     }
 
     setActiveSlug(slug);
-    window.history.pushState({}, "", `/modarch_new_a/${slug}`);
+    window.history.pushState({}, "", `/${slug}`);
     
   };
 
@@ -176,7 +176,7 @@ const Projects = () => {
                   <div className="smallImage">
                     <div className="project_box">
                       <img
-                        src={`${import.meta.env.VITE_IMAGE_URL}/project-thumbnails/${project_thumbnail}`}
+                        src={`${import.meta.env.VITE_IMAGE_URL}/frontend/project-thumbnails/${project_thumbnail}`}
                         alt={project_name}
                       />
                       <h3>{project_name}</h3>
@@ -185,7 +185,7 @@ const Projects = () => {
                   </div>
                   <div className="project_img">
                     <img
-                      src={`${import.meta.env.VITE_IMAGE_URL}/project-images/${project_main_image}`}
+                      src={`${import.meta.env.VITE_IMAGE_URL}/frontend/project-images/${project_main_image}`}
                       alt={project_name}
                     />
                   </div>
