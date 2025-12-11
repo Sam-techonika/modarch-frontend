@@ -116,7 +116,7 @@ const Projects = () => {
                     ref={setRef}
                     key={key}
                     initial={{ opacity: 0.8, scale: 1 }}
-                    animate={{ opacity: 1, scale: 2.0 }}
+                    animate={{ opacity: 1, scale: 2.1 }}
                     exit={{ opacity: 0, scale: 1 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
                     className="bg-green-200 rounded-lg relative z-20"
@@ -126,7 +126,7 @@ const Projects = () => {
                       <Slider
                         projectId={slug}
                         onClick={() => handleClick(slug)}
-                        carouselMargin={350}
+                        carouselMargin={380}
                         opacity={1}
                         fontSize={"8px"}
                         drag={"x"}
