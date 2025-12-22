@@ -18,7 +18,7 @@ const Layout = () => {
       <main className="flex-grow">
         <Outlet context={{ selectedCategory }} />
       </main>
-      <Footer />
+      <Footer setSelectedCategory={handleCategoryChange} />
     </div>
   );
 }

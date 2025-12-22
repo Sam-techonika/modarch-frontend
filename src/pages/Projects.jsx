@@ -33,7 +33,6 @@ const Projects = () => {
   }, []);
   const selectedCategory = useOutletContext(); // ✅ Access context data
 
-  console.log('prod', selectedCategory.selectedCategory);
   // ✅ Filter projects by selected category
   if (selectedCategory.selectedCategory) {
     projectData = projectData.filter(project => {

@@ -44,10 +44,10 @@ const Header = ({ selectedCategory, setSelectedCategory }) => {
             />
           </button>
           <ul class="dropdown-menu">
-            <li><Link to="/" class="dropdown-item" href="#">Home</Link></li>
-            <li><Link to="/about" class="dropdown-item" href="#">About Us</Link></li>
-            <li><Link to="/careers" class="dropdown-item" href="#">Careers</Link></li>
-            <li><Link to="/contact" class="dropdown-item" href="#">Contact Us</Link></li>
+            <li><Link to="/" class="dropdown-item" onClick={() => setSelectedCategory('')}>Home</Link></li>
+            <li><Link to="/about" class="dropdown-item" >About Us</Link></li>
+            <li><Link to="/careers" class="dropdown-item" >Careers</Link></li>
+            <li><Link to="/contact" class="dropdown-item" >Contact Us</Link></li>
           </ul>
 
           {/* Mobile Toggle */}

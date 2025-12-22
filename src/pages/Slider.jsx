@@ -45,6 +45,8 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
             className="inner-carousel mb-5 d-flex"
             drag={drag}
             dragConstraints={{ right: 0, left: -width }}
+            dragElastic={0.15}
+            dragMomentum={true}
           >
 
             {project && (
