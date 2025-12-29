@@ -149,7 +149,7 @@ width: 100%;
 }
 .item {
   min-width: calc(100% / 3 - 1rem); /* 3 slides per view with 1rem gap */
-  height: 300px;
+  height: 280px;
   flex-shrink: 0;
   border-radius: 12px;
   overflow: hidden;

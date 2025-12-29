@@ -51,18 +51,25 @@ const Projects = () => {
   useEffect(() => {
     if (activeSlug && projectRefs.current[activeSlug]) {
       const el = projectRefs.current[activeSlug];
-      const rect = el.getBoundingClientRect();
-      const isVisible =
-        rect.top >= 0 && rect.bottom <= window.innerHeight;
-
-      if (!isVisible) {
-        el.scrollIntoView({
-          behavior: "smooth",
-          block: "center", // 'center' or 'start'
-        });
+      
+      // Find the index of the active project
+      const activeIndex = projectData.findIndex(p => p.slug === activeSlug);
+      
+      // Only scroll if it's NOT the first project (index > 0)
+      if (activeIndex > 0) {
+        setTimeout(() => {
+          // Get current position
+          const rect = el.getBoundingClientRect();
+          
+          // Scroll just a bit to adjust position (not full center)
+          window.scrollBy({
+            top: rect.top - 100, // Scroll so element is 100px from top
+            behavior: "smooth"
+          });
+        }, 650);
       }
     }
-  }, [activeSlug]);
+  }, [activeSlug, projectData]);
 
   const handleClick = (slug) => {
     if (slug !== activeSlug) {
