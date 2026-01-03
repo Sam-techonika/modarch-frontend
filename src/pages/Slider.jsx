@@ -59,8 +59,7 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
             dragConstraints={{ right: 0, left: -width }}
             dragElastic={0.15}
             dragMomentum={true}
-          >
-
+          >            
             {project && (
               <motion.div className="item firstItem"  data-aos="fade-right" data-aos-delay="200"  style={{ width: "25%" }}>
                 <div className="project_box" style={{padding: "5px"}}>

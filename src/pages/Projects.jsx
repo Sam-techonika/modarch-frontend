@@ -122,7 +122,7 @@ const Projects = () => {
                     ref={setRef}
                     key={key}
                     initial={{ opacity: 0.8, scale: 1 }}
-                    animate={{ opacity: 1, scale: 2.1 }}
+                    animate={{ opacity: 1, scale: 2.25 }}
                     exit={{ opacity: 0, scale: 1 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
                     className="bg-green-200 rounded-lg relative z-20"
