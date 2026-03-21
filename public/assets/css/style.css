@@ -460,6 +460,9 @@ footer{
   color: #000;
   padding: 20px;
   border-radius: 10px;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
 }
 .contactBox h3{
   font-size: 24px;

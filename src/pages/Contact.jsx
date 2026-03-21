@@ -101,7 +101,8 @@ const Contact = () => {
                                 </div>
                                 <div className="col-md-9 col-9">
                                     <h3>Address</h3>
-                                    <div>B-99, Ist Floor, Sector-63, Noida - 201301, India</div>
+                                    <div><strong>India Address:</strong> B-99, Ist Floor, Sector-63, Noida - 201301, India</div>
+                                    <div><strong>Vietnam Address:</strong> 12 Vo Van Kiet, District 1, Ho Chi Minh City, Vietnam 700000</div>
                                 </div>
                             </div>
                         </div>

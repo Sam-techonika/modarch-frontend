@@ -33,7 +33,7 @@ const About = () => {
                             <br /><br />The studio booting to its technological know-how is a networked environment works, with the team displaying proficiency in top of the shelf designing, modeling and research software.
                         </p>
                         <h2 className="text-black">People</h2>
-                        <p className="text-black">We would like to introduce ourselves as a group of young professionals rendering professional services in the field of architecture, interior – design, and environmental planning with a quality conscious attitude.Our professional staff offers broad experience and exceptional design talent.As an active part of the growing architectural culture, MODARCH continues to evolve technically, aesthetically, theoretically and technologically. MODARCH today comprises of a team of 30 Architects, Engineers & Interior Designers.</p>
+                        <p className="text-black">We would like to introduce ourselves as a group of young professionals rendering professional services in the field of architecture, interior – design, and environmental planning with a quality conscious attitude.Our professional staff offers broad experience and exceptional design talent.As an active part of the growing architectural culture, MODARCH continues to evolve technically, aesthetically, theoretically and technologically. MODARCH today comprises of a team of 225+ associated professional Architects, Engineers & Interior Designers.</p>
                     </div>
                 </div>
             </section>
