@@ -34,7 +34,11 @@ const Footer = ({ setSelectedCategory }) => {
                             <ul>
                                 <li><i className="fa fa-phone"></i><a href="tel:911204206253" target="_blank">(+91) 1204206253</a>, <a href="mailto:911204206600" target="_blank">(+91) 1204206600</a></li>
                                 <li><i className="fa fa-envelope"></i><a href="mailto:info@modarchindia.com" target="_blank">info@modarchindia.com</a>, <a href="mailto:careers@modarchindia.com" target="_blank">careers@modarchindia.com</a></li>
-                                <li><i className="fa fa-map-marker"></i><a href="javascript:void(0)">B-99, Ist Floor, Sector-63, Noida - 201301, India</a></li>
+                                <li>
+                                    <i className="fa fa-map-marker"></i>
+                                    <div><strong>India Address:</strong> B-99, Ist Floor, Sector-63, Noida - 201301, India</div>
+                                    <div><strong>Vietnam Address:</strong> 12 Vo Van Kiet, District 1, Ho Chi Minh City, Vietnam 700000</div>
+                                </li>
                             </ul>
                         </div>
                     </div>
