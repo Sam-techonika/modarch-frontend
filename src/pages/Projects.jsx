@@ -1,6 +1,6 @@
 import Slider from "./Slider";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { useData } from "../context/DataContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -22,47 +22,58 @@ const Projects = () => {
   const [activeSlug, setActiveSlug] = useState(null);
   const [previousSlugs, setPreviousSlugs] = useState([]);
   const rowRef = useRef(null);
-  const projectRefs = useRef({}); // ✅ store refs for scroll
+  const projectRefs = useRef({});
 
-  let { projectData } = useData();
+  const { projectData } = useData();
+  const selectedCategory = useOutletContext();
 
-  // ✅ Read slug from URL if present
+  // ✅ Read slug from URL
   useEffect(() => {
     const pathSlug = window.location.pathname.split("/").pop();
     if (pathSlug) setActiveSlug(pathSlug);
   }, []);
-  const selectedCategory = useOutletContext(); // ✅ Access context data
 
-  // ✅ Filter projects by selected category
-  if (selectedCategory.selectedCategory) {
-    projectData = projectData.filter(project => {
-      const categoryIds = project.category_id.toString().split(','); // convert to array
-      return categoryIds.includes(selectedCategory.selectedCategory.toString());
+  // ✅ Default category = 5
+  const defaultCategory = 5;
+
+  // ✅ Memoized filtered projects
+  const filteredProjects = useMemo(() => {
+    const activeCategory =
+      selectedCategory?.selectedCategory || defaultCategory;
+
+    return projectData?.filter((project) => {
+      const categoryIds = project.category_id.toString().split(",");
+      return categoryIds.includes(activeCategory.toString());
     });
-  }
+  }, [projectData, selectedCategory]);
 
-  // ✅ Reset when category changes
+  // ✅ Reset on category change
   useEffect(() => {
     setActiveSlug(null);
     setPreviousSlugs([]);
   }, [selectedCategory]);
 
-  // ✅ Scroll active project into view when selected
+  // ✅ Scroll to active project
   useEffect(() => {
     if (activeSlug && projectRefs.current[activeSlug]) {
       const el = projectRefs.current[activeSlug];
-      const rect = el.getBoundingClientRect();
-      const isVisible =
-        rect.top >= 0 && rect.bottom <= window.innerHeight;
 
-      if (!isVisible) {
-        el.scrollIntoView({
-          behavior: "smooth",
-          block: "center", // 'center' or 'start'
-        });
+      const activeIndex = filteredProjects.findIndex(
+        (p) => p.slug === activeSlug
+      );
+
+      if (activeIndex > 0) {
+        setTimeout(() => {
+          const rect = el.getBoundingClientRect();
+
+          window.scrollBy({
+            top: rect.top - 100,
+            behavior: "smooth",
+          });
+        }, 650);
       }
     }
-  }, [activeSlug]);
+  }, [activeSlug, filteredProjects]);
 
   const handleClick = (slug) => {
     if (slug !== activeSlug) {
@@ -75,7 +86,6 @@ const Projects = () => {
 
     setActiveSlug(slug);
     window.history.pushState({}, "", `/${slug}`);
-    
   };
 
   return (
@@ -87,8 +97,9 @@ const Projects = () => {
             className="row relative"
             style={{ transformOrigin: "center center", overflow: "visible" }}
           >
-            {projectData?.map((project, index) => {
+            {filteredProjects?.map((project, index) => {
               if (!project) return null;
+
               const {
                 slug,
                 id,
@@ -99,11 +110,15 @@ const Projects = () => {
               } = project;
 
               const key =
-                slug && slug.trim() ? slug : id ? `id-${id}` : `index-${index}`;
+                slug && slug.trim()
+                  ? slug
+                  : id
+                  ? `id-${id}`
+                  : `index-${index}`;
+
               const isActive = activeSlug === slug;
               const isPrevious = previousSlugs.includes(slug);
 
-              // ✅ Assign ref for each project
               const setRef = (el) => {
                 if (slug && el) projectRefs.current[slug] = el;
               };
@@ -192,8 +207,8 @@ const Projects = () => {
               );
             })}
 
-            {/* Show message if no projects */}
-            {projectData?.length === 0 && (
+            {/* ❌ No projects */}
+            {filteredProjects?.length === 0 && (
               <div className="col-12 text-center py-5 noProject">
                 No projects found for this category.
               </div>

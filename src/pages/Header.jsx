@@ -44,7 +44,7 @@ const Header = ({ selectedCategory, setSelectedCategory }) => {
             />
           </button>
           <ul class="dropdown-menu">
-            <li><Link to="/" class="dropdown-item" onClick={() => setSelectedCategory('')}>Home</Link></li>
+            <li><Link to="/" class="dropdown-item" onClick={() => setSelectedCategory('5')}>Home</Link></li>
             <li><Link to="/about" class="dropdown-item" >About Us</Link></li>
             <li><Link to="/careers" class="dropdown-item" >Careers</Link></li>
             <li><Link to="/contact" class="dropdown-item" >Contact Us</Link></li>
@@ -67,7 +67,7 @@ const Header = ({ selectedCategory, setSelectedCategory }) => {
           >
             <ul className="navbar-nav text-center mt-3 mt-lg-0 align-items-center gap-lg-3">
               {categories?.map(({ id, category_name, subcategories = [] }) => (
-                <li key={id} className="nav-item">
+                <li key={id} data-id={id} className="nav-item">
                   <Link
                     to="#"
                     className={`nav-link px-2 py-2 ${
