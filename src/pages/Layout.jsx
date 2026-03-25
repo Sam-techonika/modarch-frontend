@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Layout = () => {
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState('5');
     const navigate = useNavigate();
 
     const handleCategoryChange = (categoryId) => {

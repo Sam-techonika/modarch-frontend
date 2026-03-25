@@ -44,7 +44,7 @@ const Header = ({ selectedCategory, setSelectedCategory }) => {
             />
           </button>
           <ul class="dropdown-menu">
-            <li><Link to="/" class="dropdown-item" onClick={() => setSelectedCategory('5')}>Home</Link></li>
+            <li><Link to="/" class="dropdown-item" onClick={() => setSelectedCategory()}>Home</Link></li>
             <li><Link to="/about" class="dropdown-item" >About Us</Link></li>
             <li><Link to="/careers" class="dropdown-item" >Careers</Link></li>
             <li><Link to="/contact" class="dropdown-item" >Contact Us</Link></li>
@@ -71,7 +71,7 @@ const Header = ({ selectedCategory, setSelectedCategory }) => {
                   <Link
                     to="#"
                     className={`nav-link px-2 py-2 ${
-                      selectedCategory === id ? "active-category" : ""
+                      selectedCategory == id ? "active-category" : "active"
                     } d-flex small justify-content-between align-items-center`}
                     onClick={(e) => {
                       e.preventDefault();
