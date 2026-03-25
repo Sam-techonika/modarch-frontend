@@ -22,12 +22,24 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
   // filter the project using slug key
   const project = projectData.find((item) => item.slug === projectId);
   const mediaItems = project?.content;
+  
   useEffect(() => {
-    if (carouselRef.current) {
-      const scrollWidth = carouselRef.current.scrollWidth;
-      const offsetWidth = carouselRef.current.offsetWidth;
-      setWidth(scrollWidth - offsetWidth);
-    }
+    const updateWidth = () => {
+      if (carouselRef.current) {
+        // Add a small delay to ensure DOM is fully rendered
+        setTimeout(() => {
+          const scrollWidth = carouselRef.current.scrollWidth;
+          const offsetWidth = carouselRef.current.offsetWidth;
+          // Add extra buffer to ensure last item is fully visible
+          setWidth(scrollWidth - offsetWidth + 200);
+        }, 100);
+      }
+    };
+    
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    
+    return () => window.removeEventListener('resize', updateWidth);
   }, [mediaItems]);
 
   return (
@@ -47,8 +59,7 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
             dragConstraints={{ right: 0, left: -width }}
             dragElastic={0.15}
             dragMomentum={true}
-          >
-
+          >            
             {project && (
               <motion.div className="item firstItem"  data-aos="fade-right" data-aos-delay="200"  style={{ width: "25%" }}>
                 <div className="project_box" style={{padding: "5px"}}>
@@ -146,7 +157,7 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
                   <motion.img
                     src={`${import.meta.env.VITE_IMAGE_URL}/frontend/project-images/${project.project_main_image}`}
                     alt={`media-project_main_image`}
-                    style={{ width: "100%", height: "300px", objectFit: "cover" }}
+                    style={{ width: "100%", height: "280px", objectFit: "cover" }}
                     whileHover={{ scale: 1.1 }}
                   />
                 </div>
@@ -170,7 +181,7 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
                     <motion.img
                       src={`${import.meta.env.VITE_IMAGE_URL}/frontend/${item?.image}`}
                       alt={`media-${index}`}
-                      style={{ width: "100%", height: "300px", objectFit: "cover" }}
+                      style={{ width: "100%", height: "280px", objectFit: "cover" }}
                       whileHover={{ scale: 1.05 }}
                     />
                   </div>
@@ -217,6 +228,8 @@ export default function MotionSlider({ projectId, carouselMargin = 40, fontSize 
                 )}
               </motion.div>
             ))}
+            {/* Spacer to prevent last item from being cropped */}
+            <div style={{ minWidth: "25%", flexShrink: 0 }}></div>
           </motion.div>
         </AnimatePresence>
       </motion.div>

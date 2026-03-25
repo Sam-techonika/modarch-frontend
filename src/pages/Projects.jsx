@@ -57,7 +57,6 @@ const Projects = () => {
   useEffect(() => {
     if (activeSlug && projectRefs.current[activeSlug]) {
       const el = projectRefs.current[activeSlug];
-
       const activeIndex = filteredProjects.findIndex(
         (p) => p.slug === activeSlug
       );
@@ -74,7 +73,6 @@ const Projects = () => {
       }
     }
   }, [activeSlug, filteredProjects]);
-
   const handleClick = (slug) => {
     if (slug !== activeSlug) {
       if (activeSlug && !previousSlugs.includes(activeSlug)) {
@@ -130,7 +128,7 @@ const Projects = () => {
                     ref={setRef}
                     key={key}
                     initial={{ opacity: 0.8, scale: 1 }}
-                    animate={{ opacity: 1, scale: 2.1 }}
+                    animate={{ opacity: 1, scale: 2.25 }}
                     exit={{ opacity: 0, scale: 1 }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
                     className="bg-green-200 rounded-lg relative z-20"

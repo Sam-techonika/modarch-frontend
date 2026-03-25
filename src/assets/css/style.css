@@ -149,7 +149,7 @@ width: 100%;
 }
 .item {
   min-width: calc(100% / 3 - 1rem); /* 3 slides per view with 1rem gap */
-  height: 300px;
+  height: 280px;
   flex-shrink: 0;
   border-radius: 12px;
   overflow: hidden;
@@ -207,3 +207,21 @@ width: 100%;
 .w-20{
   min-width: 20% !important;
 }
+/* Footer contact alignment fixes */
+.contact ul { list-style: none; padding: 0; margin: 0; }
+.contact ul li { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.contact ul li i { width: 24px; min-width: 24px; text-align: center; font-size: 18px; color: #198754; margin-top: 0; }
+.contact ul li .contact-text { display: flex; flex-direction: row; gap: 4px; flex-wrap: wrap; flex: 1; }
+.contact ul li.location .contact-text { gap: 6px; }
+.contact ul li .contact-text span { color: #000; line-height: 1.2; }
+.contact ul li a { color: #000; text-decoration: none; white-space: nowrap; }
+.contact ul li a:hover { color: #198754; }
+.contact ul li:last-child { margin-bottom: 0; }
+
+@media (max-width: 768px) {
+  .contact ul li { flex-direction: row; align-items: flex-start; gap: 8px; }
+  .contact ul li i { margin-top: 4px; }
+  .contact ul li .contact-text { flex-direction: column; }
+}
+
+
